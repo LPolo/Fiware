@@ -10,7 +10,8 @@ class Tweet {
     /** @Column(type="string") * */
     protected $tweet;
     
-    protected $tiempo
+    /** @Column(type="string" * */
+    protected $tiempo;
 
     public function getId() {
         return $this->id;
@@ -24,6 +25,5 @@ class Tweet {
         $this->tweet = $tweet;
     }
     
-    
 
-?>
+}
