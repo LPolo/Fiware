@@ -10,5 +10,12 @@ class CuentaTwitter{
     
      /** @ManyToOne(targetEntity="Usuario", inversedBy="cuentastwitter")**/
     protected $Usuario;
+    
+     /**
+    * @return Usuario
+    */
+   public function getUsuario(){
+       return $this->Usuario;
+   }
 }
 ?>
