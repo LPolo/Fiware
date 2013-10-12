@@ -13,5 +13,13 @@ class Respuesta{
      /** @ManyToOne(targetEntity="Pregunta", inversedBy="respuestas")**/
     protected $pregunta;
     
+      /**
+    * @return Pregunta
+    */
+   public function getPregunta(){
+       return $this->pregunta;
+   }
+   
+    
 }
 ?>

@@ -10,6 +10,12 @@ class Pregunta{
      /** @Column(type="string") **/
     protected $pregunta;
     
+    /** @Column(type="boolean")**/
+    protected $esAbierta=false;
+    
+      /** @Column(type="integer")**/
+    protected $esAbierta=false;
+    
      /** @ManyToOne(targetEntity="Encuesta", inversedBy="preguntas")**/
     protected $encuesta;
     
@@ -21,7 +27,15 @@ class Pregunta{
         
     }
     
-    public function getId(){
+    public function setesAbierta($valor){
+        $this->esAbierta=$valor;
+    }
+    
+    public function getesAbierta(){
+        return $this->esAbierta;
+    }
+
+        public function getId(){
         return $this->id;
     }
     

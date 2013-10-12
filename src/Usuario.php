@@ -19,6 +19,9 @@ class Usuario{
     /** @OneToMany(targetEntity="Encuesta", mappedBy="usuario")**/
     protected $encuestas;
     
+     /** @OneToMany(targetEntity="CuentasTwitter", mappedBy="usuario")**/
+    protected $cuentastwitter;
+    
     public function Usuario($Nomb,$Ema,$Contr){
         $this->nombre=$Nomb;
         $this->emaill=$Ema;
@@ -63,6 +66,22 @@ class Usuario{
     */
    public function removeEncuesta(\Entity\Encuesta $Encuestas) {
        $this->encuestas->removeElement($Encuestas);
+   }
+   
+     /**
+    * @param \Entity\CuentaTwitter $CuentaTwitter
+    * @return Usuario
+    */
+   public function addCuentaTwitter(\Entity\CuentaTwitter $CuentaTwitter) {
+       $this->cuentastwitter[] = $CuentaTwitter;
+       return $this;
+   }
+
+   /**
+    * @param \Entity\CuentaTwitter $CuentaTwitter
+    */
+   public function removeCuentaTwitter(\Entity\CuentaTwitter $CuentaTwitter) {
+       $this->cuentastwitter->removeElement($CuentaTwitter);
    }
 }
 ?>
