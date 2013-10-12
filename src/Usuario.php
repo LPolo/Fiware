@@ -14,18 +14,18 @@ class Usuario{
     protected $email;
     
     /** @Column(type="string") **/
-    protected $contraseña;
+    protected $contrasena;
     
     /** @OneToMany(targetEntity="Encuesta", mappedBy="usuario")**/
     protected $encuestas;
     
-     /** @OneToMany(targetEntity="CuentasTwitter", mappedBy="usuario")**/
+    /** @OneToMany(targetEntity="CuentaTwitter", mappedBy="usuario")**/
     protected $cuentastwitter;
     
     public function Usuario($Nomb,$Ema,$Contr){
         $this->nombre=$Nomb;
         $this->emaill=$Ema;
-        $this->contrasea = md5($Contr);  
+        $this->contrasena = md5($Contr);  
         
     }
     

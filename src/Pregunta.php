@@ -13,9 +13,6 @@ class Pregunta{
     /** @Column(type="boolean")**/
     protected $esAbierta=false;
     
-      /** @Column(type="integer")**/
-    protected $esAbierta=false;
-    
      /** @ManyToOne(targetEntity="Encuesta", inversedBy="preguntas")**/
     protected $encuesta;
     
