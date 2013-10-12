@@ -33,7 +33,14 @@ class Controlador{
     }
     
     public function EditarUsuario($Id,$Campo,$Valor){
-        
+        $Usuario = $this->entityManager->find("Usuario",$Id);
+        if($Campo=="nombre"){
+            $Usuario->setNombre($Valor);
+        }else if($Campo=="email"){
+            $Usuario->setEmail($Valor);
+        }else if($Campo=="contraseña"){
+            $Usuario->setContraseña($Valor);
+        }
     }
     
     public function EliminarContratante(){
